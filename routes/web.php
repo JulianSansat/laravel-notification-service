@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// routes/web.php
+Route::get('/fire', function () {
+    event(new \App\Events\newNotification());
+    return 'ok';
+});
