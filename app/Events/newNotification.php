@@ -21,16 +21,14 @@ class newNotification implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($createdNotification)
     {
         $this->notification = [
-            'user_id' => '2',
-            'author_id' => '1',
-            'title' => 'some notification',
-            'body'  => 'this is a notification, click on it to go to the action url',
-            'type'  => 'comment',
-            'target_id' => '2',
-            'action_url'=> 'https://baseurl/actionurl/2'
+            'user_id'       => $createdNotification->user_id,
+            'author_id'     => $createdNotification->author_id,
+            'title'         => $createdNotification->title,
+            'body'          => $createdNotification->body,
+            'action_url'    => $createdNotification->action_url
         ];
     }
 
